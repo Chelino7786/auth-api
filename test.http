@@ -1,0 +1,25 @@
+### 1. Registrar usuario
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{
+  "name": "Cheli",
+  "email": "cheli@gmail.com",
+  "password": "123456"
+}
+
+### 2. Iniciar sesión
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+  "email": "cheli@gmail.com",
+  "password": "123456"
+}
+
+### 3. Ver perfil (pega el token que te dio el login)
+GET http://localhost:3000/auth/profile
+Authorization: Bearer TOKEN_AQUI
+
+### 4. Intentar sin token (debería dar error 401)
+GET http://localhost:3000/auth/profile
